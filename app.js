@@ -48,6 +48,6 @@ app.get("*", (req,res)=>{
 
 // / server start
 app.listen(PORT, ()=>{
-    console.log("the espress server has started sucessfuly");
-    console.log(PORT)
+    console.log(`server started on https://l27.00.1/${PORT}/`);
+    console.log(`go to browser and type localhost/${PORT}`);
 });
