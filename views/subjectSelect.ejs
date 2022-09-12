@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Buddy - Select Subjects</title>
+    <link rel="stylesheet" href="css/subjectSelect.css">
+</head>
+
+<body>
+    <div class="selectBox">
+        <div id="selectSubject">
+            <form action="/subjecttest" method="post">
+                <div class="flex-between">
+                    <h1>Subjects</h1>
+                    <input id="submit" type="submit" value="Select">
+                </div>
+                <div class="list">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // subject Suggestions
+    let subjectList = [];
+    subjectListStr = `<%= subjectData %>`;
+   subjectList = subjectListStr.split(",");
+
+   const count={};
+        subjectList.forEach((ele) =>{
+            count[ele] = (count[ele] || 0) + 1;
+        });
+        let subjectName = Object.keys(count);
+        let subjectCount = Object.values(count);
+
+        let subjectListData = subjectName.join('');
+        let subjectCountData = subjectCount.join('');
+        
+        let subjectli = document.querySelector(".list")
+        subjectli.innerHTML = `<span class="flex-between" style="position:relative;">
+    <li> <input type="checkbox" name="subject" value="${subjectListData}">
+        ${subjectListData}</li>
+    <i style="position:absolute;right:10px;padding:10px;">${subjectCountData}</i>
+    </span>`;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Buddy - Topic Test</title>
+    <link rel="stylesheet" href="css/topicTest.css">
+</head>
+
+<body>
+    <div class="testHolder">
+        <div id="testPaper">
+            <div class="content">
+                <div class="flex-between">
+                    <h1>
+                        <%= selectedTopicData %>
+                    </h1>
+                    <span id="time">00:00</span>
+                </div>
+            </div>
+            <div class="test">
+                <div class="question">
+                    <b>Question</b>
+                    <% for(let i=0; i < dataArr.length ; i++) { %>
+                        <li >
+                            <%= dataArr[i].question %>
+                        </li>
+                        <% } %>
+                </div>
+
+            </div>
+        </div>
+        <div class="utilBtn">
+            <div class="flex-between">
+                <button><a href="/">Home</a></button>
+                <button onclick="showAns()">Answer</button>
+            </div>
+        </div>
+        <div class="test" id="ans">
+            <div class="answer">
+                <b>Answer</b>
+                <% for(let i=0; i < dataArr.length ; i++) { %>
+                    <li>
+                        <%= dataArr[i].answer %>
+                    </li>
+                    <% } %>
+            </div>
+            <div class="solution">
+                <b>Solution</b>
+                <% for(let i=0; i < dataArr.length ; i++) { %>
+                    <li>
+                        <%= dataArr[i].solution %>
+                    </li>
+                    <% } %>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/interpret.js"></script>
+</body>
+
+</html>

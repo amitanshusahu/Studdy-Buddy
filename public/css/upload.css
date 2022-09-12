@@ -1,0 +1,169 @@
+@import url(utils.css);
+body{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#preview-box{
+    width: 60vw;
+    height: 100px;
+    border: 5px solid rgba(255, 255, 255, 0.779);
+    background-color: rgba(243, 251, 255, 0.773);
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    border-radius: 10px;
+    border-top: none;
+    backdrop-filter: blur(2px);
+    overflow: scroll;
+    height: 0;
+}
+.pre-top{
+    padding: 10px;
+    font-weight: bold;
+    color: rgb(171, 171, 171);
+    cursor: pointer;
+}
+#preview{
+    padding: 10px;
+    padding-top: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: large;
+    display: flex;
+}
+.highlight{
+    animation: high 3s linear; 
+}
+@keyframes high {
+    to{
+        border: 2px solid blue;
+    }
+    from{
+        border: 2px solid greenyellow;
+    }
+}
+.form-holder{
+    margin-top: 30px;
+    max-width: 80%;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+.form-holder h1{
+    padding: 20px;
+    padding-top: 40px;
+}
+form{
+    text-align: center;
+    font-size: 20px;
+}
+.block1, .block2 , .block3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    gap: 20px;
+    flex-grow: 1;
+}
+.block3{
+    flex-flow: column;
+}
+.block1 span{
+    width: 100%;
+    position: relative;
+}
+.block1 textarea, .block2 textarea, .block3 textarea{
+    outline:none;
+    border: 3px solid var(--primary300);
+    padding: 20px;
+    resize: none;
+    width: calc(100% - 40px);
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: var(--primary100);
+}
+.block1 textarea:hover, .block2 textarea:hover, .block3 textarea:hover{
+    border: 3px solid grey;
+}
+.block3 textarea{
+    padding: 20px;
+}
+#solution-img{
+    display: none;
+}
+label{
+    cursor:pointer;
+    margin-top: -49px;
+    background-color: gold;
+    width: 100%;
+    border: 3px solid gold;
+    display: none;
+    height: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+#submit{
+    background-color: blue;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding: 10px;
+    margin: 20px;
+    border: 1px solid blue;
+    min-width: 80%;
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+}
+.subject-autocomp-box , .chapter-autocomp-box, .topic-autocomp-box{
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    border-top: 0px;
+    width: 100%;
+    max-height: 50vh;
+    padding: 0px;
+    overflow-y: auto;
+    overflow-wrap: break-word;
+    max-height: 300px;
+    opacity: 0;
+    pointer-events: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.active{
+    opacity: 1;
+    pointer-events: auto;
+    background-color: white;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.active li{
+    list-style: none;
+    text-align: left;
+    min-width: 70%;
+    padding: 10px;
+}
+.active li:hover{
+    background-color: rgba(0, 0, 0, 0.05);
+}
+#info{
+    padding: 20px;
+}
+@media screen and (max-width: 900px) {
+    .block1, .block2 , .block3{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .form-holder{
+        max-width: 100%;
+    }
+    .block1 textarea, .block2 textarea, .block3 textarea{
+        font-size: 15px;
+    }
+  }

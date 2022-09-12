@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Buddy - Upload</title>
+    <link rel="stylesheet" href="css/upload.css">
+</head>
+
+<body>
+    <%- include('nav.ejs'); %>
+    <div id="preview-box">
+        <div class="flex-between pre-top" onclick="highlight()">
+            <span >preview</span>
+            <span><a href="#info">?</a></span>
+        </div>
+        <div id="preview">
+        </div>
+    </div>
+    <div class="form-holder">
+        <h1>Upload Your Question</h1>
+        <form action="/upload" method="post">
+            <legend class="block1">
+                <!-- subject -->
+                <span class="subject-input-wrapper">
+                    <textarea rows="1" placeholder="Type subject name" name="subject" id="subject"></textarea>
+                    <div class="subject-autocomp-box">
+                    </div>
+                </span>
+                <!-- chapter -->
+                <span class="chapter-input-wrapper">
+                    <textarea rows="1" placeholder="Type chapter name" name="chapter" id="chapter"></textarea>
+                    <div class="chapter-autocomp-box">
+                    </div>
+                </span>
+                <!-- topic -->
+                <span class="topic-input-wrapper">
+                    <textarea rows="1" placeholder="Type topic name" name="topic" id="topic"></textarea>
+                    <div class="topic-autocomp-box">
+                    </div>
+                </span>
+            </legend>
+
+            <legend class="block2">
+                <textarea  placeholder="Type question .." name="question" id="question" rows="1"></textarea>
+                <textarea  placeholder="Type answer .." name="answer" id="answer" rows="1"></textarea>
+            </legend>
+
+            
+            <legend class="block3">
+                <textarea name="solution" id="solution" cols="30" rows="10" placeholder="Type The Solution ..."></textarea> 
+                <label id="solution-img-lable" for="solution-img">
+                    Select image
+                    <input type="file" name="solution-img" id="solution-img" accept="image/*">
+                </label>
+            </legend>
+
+            <input type="submit" value="Upload" id="submit">
+        </form>
+    </div>
+    <section id="info" >
+        <p>
+         <b>Please do not repeat the question</b>
+            <hr>
+            <li>* and / to represent multiplication and division</li>
+            <hr>
+            <li>+ and - to represent addition and substraction</li>
+            <hr>
+            <li>^ to represent exponent</li>
+            <hr>
+        </p>
+    </section>
+    <%- include('suggestions.ejs'); %>
+    <script src="js/script.js"></script>
+    <script>
+        function highlight(){
+            document.getElementById("info").classList.add("highlight");
+            setTimeout(3000 , ()=>{
+                console.log("working")
+                document.getElementById("info").classList.remove("highlight"); 
+            })
+        }
+    </script>
+    <script src="js/preview.js"></script>
+</body>
+
+</html>

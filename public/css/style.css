@@ -1,0 +1,52 @@
+@import url(utils.css);
+
+section:nth-child(2n){
+    display: flex;
+    justify-content: space-between;
+}
+section:nth-child(2n+1){
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+section div{
+    margin: 20px;
+    padding: 20px;
+}
+section .content{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+section .imgholder{
+    width: 50%;
+}
+section .imgholder img{
+    width: 100%;
+}
+.content h1{
+    font-size: 60px;
+}
+.content p{
+    font-size: 20px;
+}
+header{
+    background-image: url(../img/header.jpg);
+    padding: 20px;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: infi 60s linear infinite alternate-reverse;
+}
+@keyframes infi {
+    to{
+        background-position: 300%;
+    }
+    from{
+        background-position: 0%;
+    }
+}

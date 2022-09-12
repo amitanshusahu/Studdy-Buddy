@@ -1,0 +1,52 @@
+@import url(utils.css);
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.testHolder{
+    min-width: 80%;
+    padding: 20px;
+    margin: 20px;
+}
+.testHolder .content{
+    padding: 20px;
+    margin: 20px;
+    padding-bottom: 0px;
+}
+.testHolder .test{
+    padding: 20px;
+    margin: 20px;
+}
+.test li{
+    padding: 10px; 
+    font-size: 18px;
+    list-style: lower-alpha;
+}
+#testPaper{
+    border: 3px solid var(--primary300);
+    border-radius: 10px;
+    background-color: var(--primary100);
+}
+.utilBtn{
+    padding: 20px;
+}
+.utilBtn button{
+    padding: 10px;
+    background-color: blue;
+    border: 2px solid blue;
+    color: white;
+    font-size: large;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.utilBtn button a{
+    color: inherit;
+}
+.solution{
+    margin-top: 20px ;
+}
+#ans{
+    display: none;
+}
