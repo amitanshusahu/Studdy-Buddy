@@ -1,8 +1,14 @@
 # Studdy-Buddy (full-stack-project)
 this is a very usefull app for students who are into self study , test yorself and be your own teacher with study buddy
-# requirements in local machine
+
+<b>Tech Stack NEEM - nodejs,expressjs,ejs,mongodb
+
+<h2>requirements in local machine</h2>
+
 Nodejs , Mongodb / remote Mongodb cluster uri (atlas)
-# script
+
+<h2>script</h2>
+
 <p>install dependencies  </p>  
 
 > $ npm i
