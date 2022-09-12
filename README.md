@@ -3,9 +3,13 @@ this is a very usefull app for students who are into self study , test yorself a
 # requirements in local machine
 Nodejs , Mongodb / remote Mongodb cluster uri (atlas)
 # script
-install dependencies  
+<p>install dependencies  </p>
 > $ npm i
-start express server  
+
+<p>start express server <p> 
+
 > $ node app
-wait till link to apper  
+  
+ 
+<p>wait till link to apper  </p>
 click the link or open it in your browser
