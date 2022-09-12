@@ -4,8 +4,8 @@ this is a very usefull app for students who are into self study , test yorself a
 Nodejs , Mongodb / remote Mongodb cluster uri (atlas)
 # script
 install dependencies  
-> npm i  
+> $ npm i
 start express server  
-> node app
+> $ node app
 wait till link to apper  
 click the link or open it in your browser
