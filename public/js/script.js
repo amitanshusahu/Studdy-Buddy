@@ -24,14 +24,15 @@ subjectInput.onkeyup = (e)=>{
         arr.forEach((ele) =>{
             count[ele] = (count[ele] || 0) + 1;
         });
+        // to remove duplicate names
         let subjectName = Object.keys(count);
-        let subjectCount = Object.values(count);
-        console.log(subjectName)
-        console.log(subjectCount)
+        subjectName = subjectName.map((ele)=>{
+            return `<li>${ele}</li>`
+        })
         //changes in subjectautocom box
         subjectSuggBox.classList.add("active")
         //show the suggestions
-        showSubjectSuggestions(subjectName,subjectCount);
+        showSubjectSuggestions(subjectName);
 
         // for selecting the suggestions
         let allList = subjectSuggBox.querySelectorAll("li");
@@ -50,22 +51,17 @@ function selectSubject(ele){
 }
 
 // function showSubjectSuggestions(filterData){
-function showSubjectSuggestions(subjectName,subjectCount){
+function showSubjectSuggestions(subjectName){
     let listData;
-    let listCount = 0;
     // if arr is empty 
     if(!subjectName.length){
-        listData =  subjectInput.value
+        listData = `<li>${subjectInput.value}</li>`
     }
      // else conver to  string 
     else{
         listData = subjectName.join('');
-        listCount = subjectCount.join('')
     }
-    subjectSuggBox.innerHTML = `<span class="flex-between" style="position:relative; text-align:left;">
-    <li> ${listData} </li>
-    <i style="position:absolute;right:10px;padding:10px;">${listCount}</i>
-    </span>`;
+    subjectSuggBox.innerHTML = listData;
 }
 
 //// chapter suggention filter
@@ -87,14 +83,15 @@ chapterInput.onkeyup = (e)=>{
         arr.forEach((ele) =>{
             count[ele] = (count[ele] || 0) + 1;
         });
+        // to remove duplicate names
         let chapterName = Object.keys(count);
-        let chapterCount = Object.values(count);
-        console.log(chapterName)
-        console.log(chapterCount)
+        chapterName = chapterName.map((ele)=>{
+            return `<li>${ele}</li>`
+        })
         //changes in chapterautocom box
         chapterSuggBox.classList.add("active")
         //show the suggestions
-        showChapterSuggestions(chapterName,chapterCount);
+        showChapterSuggestions(chapterName);
 
         // for selecting the suggestions
         let allList = chapterSuggBox.querySelectorAll("li");
@@ -112,22 +109,17 @@ function selectChapter(ele){
 }
 
 // function showSubjectSuggestions(filterData){
-function showChapterSuggestions(chapterName,chapterCount){
+function showChapterSuggestions(chapterName){
     let listData;
-    let listCount = 0;
     // if arr is empty 
     if(!chapterName.length){
-        listData = chapterInput.value
+        listData = `<li>${chapterInput.value}</li>`
     }
      // else conver to  string 
     else{
         listData = chapterName.join('');
-        listCount = chapterCount.join('');
     }
-    chapterSuggBox.innerHTML = `<span class="flex-between" style="position:relative;">
-    <li> ${listData} </li>
-    <i style="position:absolute;right:10px;padding:10px;">${listCount}</i>
-    </span>`;
+    chapterSuggBox.innerHTML = listData;
 }
 
 //// topic suggention filter
@@ -149,14 +141,15 @@ topicInput.onkeyup = (e)=>{
         arr.forEach((ele) =>{
             count[ele] = (count[ele] || 0) + 1;
         });
+        // to remove duplicate names
         let topicName = Object.keys(count);
-        let topicCount = Object.values(count);
-        console.log(topicName)
-        console.log(topicCount)
+        topicName = topicName.map((ele)=>{
+            return `<li>${ele}</li>`
+        })
         //changes in topicautocom box
         topicSuggBox.classList.add("active")
         //show the suggestions
-        showTopicSuggestions(topicName,topicCount);
+        showTopicSuggestions(topicName);
 
         // for selecting the suggestions
         let allList = topicSuggBox.querySelectorAll("li");
@@ -174,21 +167,16 @@ function selectTopic(ele){
 }
 
 // function showSubjectSuggestions(filterData){
-function showTopicSuggestions(topicName,topicCount){
+function showTopicSuggestions(topicName){
     let listData;
-    let listCount = 0;
     // if arr is empty 
     if(!topicName.length){
-        listData = topicInput.value
+        listData = `<li>${topicInput.value}</li>`
     }
      // else conver to  string 
     else{
         listData = topicName.join('');
-        listCount = topicCount.join('')
     }
-    topicSuggBox.innerHTML = `<span class="flex-between" style="position:relative;">
-    <li> ${listData} </li>
-    <i style="position:absolute;right:10px;padding:10px;">${listCount}</i>
-    </span>`;
+    topicSuggBox.innerHTML = listData;
 }
 
