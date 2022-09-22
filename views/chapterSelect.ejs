@@ -36,15 +36,14 @@
         let chapterName = Object.keys(count);
         let chapterCount = Object.values(count);
 
-        let chapterListData = chapterName.join('');
-        let chapterCountData = chapterCount.join('');
-        
         let chapterli = document.querySelector(".list")
-        chapterli.innerHTML = `<span class="flex-between" style="position:relative;">
-    <li> <input type="checkbox" name="chapter" value="${chapterListData}">
-        ${chapterListData}</li>
-    <i style="position:absolute;right:10px;padding:10px;">${chapterCountData}</i>
+        for(i=0; i<chapterName.length; i++){
+            chapterli.innerHTML += `<span class="flex-between" style="position:relative;">
+    <li> <input type="checkbox" name="chapter" value="${chapterName[i]}">
+        ${chapterName[i]}</li>
+    <i style="position:absolute;right:10px;padding:10px;">${chapterCount[i]}</i>
     </span>`;
+        }
     </script>
 </body>
 

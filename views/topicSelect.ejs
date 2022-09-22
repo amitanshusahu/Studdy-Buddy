@@ -39,11 +39,13 @@
         let topicCountData = topicCount.join('');
         
         let topicli = document.querySelector(".list")
-        topicli.innerHTML = `<span class="flex-between" style="position:relative;">
-    <li> <input type="checkbox" name="topic" value="${topicListData}">
-        ${topicListData}</li>
-    <i style="position:absolute;right:10px;padding:10px;">${topicCountData}</i>
+        for(i=0; i<topicName.length; i++){
+            topicli.innerHTML += `<span class="flex-between" style="position:relative;">
+    <li> <input type="checkbox" name="topic" value="${topicName[i]}">
+        ${topicName[i]}</li>
+    <i style="position:absolute;right:10px;padding:10px;">${topicCount[i]}</i>
     </span>`;
+        }
     </script>
 </body>
 

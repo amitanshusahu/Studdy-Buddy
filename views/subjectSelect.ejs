@@ -36,15 +36,14 @@
         let subjectName = Object.keys(count);
         let subjectCount = Object.values(count);
 
-        let subjectListData = subjectName.join('');
-        let subjectCountData = subjectCount.join('');
-        
         let subjectli = document.querySelector(".list")
-        subjectli.innerHTML = `<span class="flex-between" style="position:relative;">
-    <li> <input type="checkbox" name="subject" value="${subjectListData}">
-        ${subjectListData}</li>
-    <i style="position:absolute;right:10px;padding:10px;">${subjectCountData}</i>
+        for(i=0; i<subjectName.length; i++){
+            subjectli.innerHTML += `<span class="flex-between" style="position:relative;">
+    <li> <input type="checkbox" name="subject" value="${subjectName[i]}">
+        ${subjectName[i]}</li>
+    <i style="position:absolute;right:10px;padding:10px;">${subjectCount[i]}</i>
     </span>`;
+        }
     </script>
 </body>
 
