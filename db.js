@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 module.exports= function connectToMongo(){
-    mongoose.connect("mongodb://localhost/test")
+    mongoose.connect(process.env.MONGODB)
     .then(()=>{
         console.log("db connection sucess");
     })
